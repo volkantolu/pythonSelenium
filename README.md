@@ -1,1 +1,0 @@
-# pythonSelenium test automation project
