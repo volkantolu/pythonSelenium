@@ -1,1 +1,1 @@
-# jenkinsPipelineRepo with pythonSelenium test automation project
+# pythonSelenium test automation project
