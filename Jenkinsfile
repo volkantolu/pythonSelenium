@@ -12,8 +12,17 @@ pipeline {
       }
     }
     stage('shellScript') {
-      steps {
-        sh 'UnitTest.py'
+      parallel {
+        stage('shellScript') {
+          steps {
+            sh 'UnitTest.py'
+          }
+        }
+        stage('') {
+          steps {
+            bat(script: 'python UnitTest.py', returnStdout: true, returnStatus: true)
+          }
+        }
       }
     }
   }
