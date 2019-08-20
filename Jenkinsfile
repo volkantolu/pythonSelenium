@@ -14,7 +14,7 @@ pipeline {
     stage('windowsBatchScript') {
       
         outputValue = bat(script: 'UnitTest.py', returnStdout: true, returnStatus: true, label: 'stdout')
-        echo '%outputValue%'
+        println("outputValue ## " + outputValue + " ##")
         echo 'hello world New'
         echo '%stdout%'
         echo '%ERROR_LEVEL%'
