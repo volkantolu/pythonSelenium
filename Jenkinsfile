@@ -14,11 +14,13 @@ pipeline {
     stage('windowsBatchScript') {
       steps {
         echo 'hello world2'
-        bat(script: 'UnitTest.py', returnStdout: true, returnStatus: true, label: 'outputValue')
+        bat(script: 'UnitTest.py', returnStdout: true, returnStatus: true, label: 'batchOutput')
         echo 'hello world3'
         echo '%errorlevel%'
         echo '%failures%'
-        echo '%outputValue%'
+        echo '%batchOutput%'
+        unstable '%batchOutput%'
+        unstable 'batchOutput'
       }
     }
   }
