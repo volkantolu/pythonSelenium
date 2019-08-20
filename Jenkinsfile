@@ -13,7 +13,7 @@ pipeline {
     }
     stage('windowsBatchScript') {
       steps {
-        bat(script: 'UnitTest.py', returnStdout: true, returnStatus: true)
+        bat(script: 'UnitTest.py', echo 'hello world', returnStdout: true, returnStatus: true)
       }
     }
   }
