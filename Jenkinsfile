@@ -1,9 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('wait') {
       steps {
         sleep 5
+      }
+    }
+    stage('message') {
+      steps {
+        echo 'hello world'
       }
     }
   }
