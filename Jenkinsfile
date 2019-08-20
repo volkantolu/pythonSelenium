@@ -11,9 +11,9 @@ pipeline {
         echo 'hello world'
       }
     }
-    stage('') {
+    stage('shellScript') {
       steps {
-        sh 'python UnitTest.py'
+        sh 'UnitTest.py'
       }
     }
   }
