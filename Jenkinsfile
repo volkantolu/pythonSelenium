@@ -17,6 +17,7 @@ pipeline {
         bat(script: 'UnitTest.py', returnStdout: true, returnStatus: true)
         echo 'hello world3'
         echo '%errorlevel%'
+        echo '%failures%'
       }
     }
   }
