@@ -11,5 +11,10 @@ pipeline {
         echo 'hello world'
       }
     }
+    stage('') {
+      steps {
+        sh 'python UnitTest.py'
+      }
+    }
   }
 }
