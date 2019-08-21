@@ -11,8 +11,8 @@ pipeline {
         echo 'hello world'
       }
     }
-stage('windowsBatchScript') {
-      steps {      
+    stage('windowsBatchScript') {
+      steps {
         bat(script: 'UnitTest.py', returnStdout: true, returnStatus: true, label: 'stdout')
         echo 'hello world New'
         echo '%stdout%'
