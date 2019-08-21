@@ -1,5 +1,5 @@
 pipeline {
-  agent { docker { image 'python:3.7.2' } }
+  agent { docker { image 'python:3.7.4' } }
   stages {
     stage('build') {
       steps {
@@ -8,7 +8,7 @@ pipeline {
     }
     stage('test') {
       steps {
-        sh 'python test.py'
+        sh 'python UnitTest.py'
       }
       post {
         always {
