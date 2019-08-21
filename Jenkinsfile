@@ -14,21 +14,25 @@ pipeline {
     stage('windowsBatchScript') {
       steps {
         bat(script: 'python -m unittest UnitTest.py', returnStdout: true, returnStatus: true)
+        echo 'test'
       }
-      
     }
   }
-  
   post {
-        always {
-            echo "always show this message"
-        }
-        success {
-            echo "Show this message when success"
-        }
-        failure {
-            echo "Show this message when failed"
-        }
+    always {
+      echo 'always show this message'
+
     }
-  
+
+    success {
+      echo 'Show this message when success'
+
+    }
+
+    failure {
+      echo 'Show this message when failed'
+
+    }
+
+  }
 }
