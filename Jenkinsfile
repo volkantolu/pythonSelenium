@@ -21,10 +21,13 @@ pipeline {
   
   post {
         always {
-            echo "evrything is success"
+            echo "always show this message"
+        }
+        success {
+            echo "Show this message when success"
         }
         failure {
-            echo "Send e-mail, when failed"
+            echo "Show this message when failed"
         }
     }
   
