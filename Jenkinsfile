@@ -23,9 +23,14 @@ pipeline {
     
     stage('Unit Tests') {
       steps {
-        def returnValue = bat(script: 'python -m unittest UnitTest.py', returnStdout: true, returnStatus: true)
-        echo returnValue
-        echo '%ERROR_LEVEL%'
+        step('Get Output')
+        {
+          script {
+            def returnValue = bat(script: 'python -m unittest UnitTest.py', returnStdout: true, returnStatus: true)
+            echo returnValue
+            echo '%ERROR_LEVEL%'
+          }
+        }
       }
     }
     
