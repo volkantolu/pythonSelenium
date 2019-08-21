@@ -11,14 +11,9 @@ pipeline {
         echo 'hello world'
       }
     }
-    stage('windowsBatchScript') {
-      steps {      
-        stdout = bat(script: 'UnitTest.py', returnStdout: true, returnStatus: true, label: 'stdout')        
-        echo 'hello world New'
-        echo '%stdout%'
-        echo '%ERROR_LEVEL%'
-        echo '%failures%'
-      }      
+    stage('windowsBatchScript') {    
+        stdout = bat(returnStdout: true, script: 'UnitTest.py')    
+        println("stdout ################ " + stdout + " ####################")
     }
   }
 }
