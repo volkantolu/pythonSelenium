@@ -1,23 +1,17 @@
+cat <<-'JENKINSFILE' > Jenkinsfile
 pipeline {
-  agent any
+  agent { docker { image 'python:3.7.2' } }
   stages {
-    stage('wait') {
+    stage('build') {
       steps {
-        sleep 5
+        sh 'pip install -r requirements.txt'
       }
     }
-    stage('message') {
+    stage('test') {
       steps {
-        echo 'hello world'
-      }
-    }
-    stage('windowsBatchScript') {
-      steps {
-        bat(script: 'UnitTest.py', returnStdout: true, returnStatus: true, label: 'stdout')
-        echo 'hello world New'
-        echo '%stdout%'
-        echo '%ERROR_LEVEL%'
-      }
+        sh 'python test.py'
+      }   
     }
   }
 }
+JENKINSFILE
