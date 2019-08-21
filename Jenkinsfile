@@ -22,8 +22,8 @@ pipeline {
     }
      stage('Stage1') {
             steps {
-                'echo $PYTHON_INTERPRETER'
-                'env | sort'
+                bat 'echo $PYTHON_INTERPRETER'
+                bat 'env | sort'
                 bat "$PYTHON_INTERPRETER UnitTest.py "
             
             }}
