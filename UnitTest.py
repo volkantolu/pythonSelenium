@@ -1,4 +1,4 @@
-cat <<-'TEST_CASES' > test.py
+cat <<-'TEST_CASES' > UnitTest.py
 #!/usr/bin/env python
 import unittest
 import app
@@ -28,4 +28,4 @@ class TestHello(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 TEST_CASES
-chmod +x test.py
+chmod +x UnitTest.py
