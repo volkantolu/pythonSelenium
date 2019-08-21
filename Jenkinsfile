@@ -26,5 +26,14 @@ pipeline {
         echo '%ERROR_LEVEL%'
       }
     }
+    stages {
+        stage('Stage1') {
+            steps {
+                // sh 'echo $PYTHON_INTERPRETER'
+                // sh 'env | sort'
+                bat "$PYTHON_INTERPRETER UnitTest.py "
+            }
+        }
+    }
   }
 }
