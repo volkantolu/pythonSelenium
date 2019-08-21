@@ -13,14 +13,8 @@ pipeline {
     }
     stage('windowsBatchScript') {
       steps {
-        bat(script: 'UnitTest.py', returnStdout: true, returnStatus: true)
-        echo 'hello world New'
-        echo '%stdout%'
-        echo '%ERROR_LEVEL%'
-        echo '%failures%'
+        bat(script: 'python -m unittest UnitTest.py', returnStdout: true, returnStatus: true)
       }
     }
-            
   }
-  
 }
