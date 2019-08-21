@@ -1,5 +1,4 @@
-cat <<-'TEST_CASES' > UnitTest.py
-#!/usr/bin/env python
+
 import unittest
 import app
 
