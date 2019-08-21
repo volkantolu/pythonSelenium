@@ -1,27 +1,24 @@
 pipeline {
-  agent {
-    docker {
-      image 'python:3.7.4'
-    }
-
-  }
+  agent any
   stages {
-    stage('build') {
+    stage('wait') {
       steps {
-        sh 'pip install -r requirements.txt'
+        sleep 5
       }
     }
-    stage('test') {
-      post {
-        always {
-          junit 'test-reports/*.xml'
-
-        }
-
-      }
+    stage('message') {
       steps {
-        sh 'python UnitTest.py'
+        echo 'hello world'
       }
+    }
+    stage('windowsBatchScript') {
+      steps {      
+        bat(script: 'UnitTest.py', returnStdout: true, returnStatus: true, label: 'stdout')
+        echo 'hello world New'
+        echo '%stdout%'
+        echo '%ERROR_LEVEL%'
+        echo '%failures%'
+      }      
     }
   }
 }
