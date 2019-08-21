@@ -26,7 +26,7 @@ pipeline {
                 // sh 'env | sort'
                 bat "$PYTHON_INTERPRETER UnitTest.py "
             
-        }
+            }}
     stage('Unit Tests') {
       steps {
         bat(script: 'python -m unittest UnitTest.py', returnStdout: true, returnStatus: true)
