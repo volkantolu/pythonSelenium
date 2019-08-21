@@ -19,7 +19,6 @@ stage('windowsBatchScript') {
         echo '%stdout%'
         echo '%ERROR_LEVEL%'
       }
-  }
     }
   }
 }
