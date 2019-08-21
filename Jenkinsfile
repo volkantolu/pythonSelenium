@@ -31,6 +31,6 @@ pipeline {
         
   }
 
-  currentBuild.result = 'FAILURE'
+  currentBuild.result = FAILURE
   
 }
