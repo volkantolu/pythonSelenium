@@ -15,6 +15,17 @@ pipeline {
       steps {
         bat(script: 'python -m unittest UnitTest.py', returnStdout: true, returnStatus: true)
       }
+      
     }
   }
+  
+  post {
+        always {
+            echo "evrything is success"
+        }
+        failure {
+            echo "Send e-mail, when failed"
+        }
+    }
+  
 }
