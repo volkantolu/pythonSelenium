@@ -20,5 +20,10 @@ pipeline {
         echo '%failures%'
       }
     }
+    stage('Unit Tests') {
+      steps {
+        bat(script: 'python -m unittest UnitTest.py', returnStdout: true, returnStatus: true)
+      }
+    }    
   }
 }
