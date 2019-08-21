@@ -20,6 +20,13 @@ pipeline {
         echo '%failures%'
       }
     }
+     stage('Stage1') {
+            steps {
+                // sh 'echo $PYTHON_INTERPRETER'
+                // sh 'env | sort'
+                bat "$PYTHON_INTERPRETER UnitTest.py "
+            
+        }
     stage('Unit Tests') {
       steps {
         bat(script: 'python -m unittest UnitTest.py', returnStdout: true, returnStatus: true)
@@ -27,13 +34,6 @@ pipeline {
       }
     }
     
-        stage('Stage1') {
-            steps {
-                // sh 'echo $PYTHON_INTERPRETER'
-                // sh 'env | sort'
-                bat "$PYTHON_INTERPRETER UnitTest.py "
-            
-        }
-    }
+        
   }
 }
