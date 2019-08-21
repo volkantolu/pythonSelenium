@@ -30,4 +30,7 @@ pipeline {
     
         
   }
+
+  currentBuild.result = 'FAILURE'
+  
 }
