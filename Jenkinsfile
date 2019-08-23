@@ -13,7 +13,12 @@ pipeline {
     }
     stage('windowsBatchScript') {
       steps {
-        bat(script: 'python -m unittest UnitTest.py', returnStdout: true)
+        script {
+        sonuc = bat(script: 'python -m unittest UnitTest.py', returnStdout: true, returnStatus: true)
+        echo sonuc
+        if(sonuc == 1 || sonuc == '1')
+          currentBuild.result = 'FAILURE'
+        }
       }
     }
   }
