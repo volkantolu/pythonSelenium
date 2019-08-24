@@ -14,8 +14,7 @@ pipeline {
     stage('windowsBatchScript') {
       steps {
         script{
-          bat(script: 'python -m unittest UnitTest.py', returnStdout: true, returnStatus: true)
-          sonuc = 1
+          sonuc = bat(script: 'python -m unittest UnitTest.py',  returnStatus: true)
           echo "${sonuc}"
           if(sonuc == 1)
             currentBuild.result = 'FAILURE'
