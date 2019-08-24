@@ -17,7 +17,7 @@ pipeline {
           sonuc = bat(script: 'python -m unittest UnitTest.py',   returnStatus:true)
           echo "${sonuc}"
           if(sonuc == 1)
-            currentBuild.result = 'SUCCESS'
+            currentBuild.result = 'FAILURE'
         }
       }
     }
