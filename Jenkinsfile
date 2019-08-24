@@ -13,10 +13,7 @@ pipeline {
     }
     stage('windowsBatchScript') {
       steps {
-        script {
           bat(script: 'python -m unittest UnitTest.py')
-        }
-
       }
     }
   }
