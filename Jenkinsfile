@@ -14,8 +14,8 @@ pipeline {
     stage('windowsBatchScript') {
       steps {
         
-          bat(script: 'python -m unittest UnitTest.py')
-
+          sonuc = bat(script: 'python -m unittest UnitTest.py')
+          echo "demo"
         
       }
     }
