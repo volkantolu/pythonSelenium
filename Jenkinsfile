@@ -15,8 +15,8 @@ pipeline {
       steps {
         script{
           //sonuc = bat(script: 'python -m unittest UnitTest.py', returnStdout: true, returnStatus: true)
-          //sonuc = bat(script: 'python -m unittest UnitTest.py', returnStdout: true)
-          sonuc = bat(script: 'python -m unittest UnitTest.py', returnStatus: true)
+          sonuc = bat(script: 'python -m unittest UnitTest.py', returnStdout: true)
+          //sonuc = bat(script: 'python -m unittest UnitTest.py', returnStatus: true)
           //echo "{sonuc}"
           echo sonuc.toString()
           if (sonuc == 1){
