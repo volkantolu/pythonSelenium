@@ -21,6 +21,7 @@ pipeline {
           //echo "{sonuc}"
           echo sonuc.toString()
           if (sonuc == 1){
+            bat(script: 'exit 1')
             currentBuild.result = 'FAILRUE'
           }
         }
