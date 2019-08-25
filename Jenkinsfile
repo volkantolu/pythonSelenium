@@ -15,7 +15,7 @@ pipeline {
       steps {
         script{
           sonuc = bat(script: 'python -m unittest UnitTest.py', returnStdout: true, returnStatus: true)
-          echo sonuc.trim()
+          echo sonuc.toString()
           if (sonuc == 1){
             currentBuild.result = 'FAILRUE'
           }
