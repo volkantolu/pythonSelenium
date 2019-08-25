@@ -20,7 +20,7 @@ pipeline {
           //sonuc = bat(script: 'python -m unittest UnitTest.py')
           //echo "{sonuc}"
           echo sonuc.toString()
-          echo %ERRORLEVEL%
+          echo %ERROR_LEVEL%
           if (sonuc == 1){
             currentBuild.result = 'FAILRUE'
           }
