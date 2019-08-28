@@ -1,19 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('wait') {
+    stage('Source Code - Git') {
       steps {
         sleep 5
       }
     }
-    stage('message') {
+    stage('Alert') {
       steps {
         echo 'hello world'
       }
     }
-    stage('windowsBatchScript') {
+    stage('Run Tests') {
       steps {
-        script{
+        script {
           sonuc = bat(script: 'python -m unittest UnitTest.py', returnStdout: true, returnStatus: true)
           //sonuc = bat(script: 'python -m unittest UnitTest.py', returnStdout: true)
           //sonuc = bat(script: 'python -m unittest UnitTest.py', returnStatus: true)
@@ -26,6 +26,7 @@ pipeline {
             //return
           }
         }
+
       }
     }
   }
